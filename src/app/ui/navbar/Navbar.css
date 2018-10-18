@@ -1,0 +1,137 @@
+nav {
+    top: 0;
+    display: block;
+    position: fixed;
+    height: 100%;
+    background: white;
+    width: 100%;
+    box-sizing: border-box;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 10;
+    transition: all 0.3s, opacity 0.5s ease;
+}
+
+nav.open {
+    visibility: unset;
+    opacity: 1;
+}
+
+nav ul {
+    list-style-type: none;
+    width: 100%;
+    padding: 48px 0 0 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    background: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    box-sizing: border-box;
+    padding: 8px;
+    font-size: 20px;
+    width: 200px;
+    margin: auto;
+    border: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+nav ul li.active a {
+    opacity: 0.5;
+}
+
+.nav-button-wrapper {
+    display: block;
+    cursor: pointer;
+    padding: 20px 16px 16px;
+    bottom: 24px;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.nav-button-wrapper .menu-button {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    box-sizing: border-box;
+    background-color: #BCAAA4;
+    transition: background-color 0.2s cubic-bezier(0, 0, 1, 0.18);
+}
+
+.nav-button-wrapper .menu-button.open {
+    background-color: white;
+}
+
+.nav-button-wrapper .menu-button .menu-icon {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    transition: opacity 0.2s cubic-bezier(0, 0, 1, 0.18),
+                transform 0.2s ease-in;
+}
+
+
+.nav-button-wrapper .menu-button .menu-icon-close {
+    opacity: 0;
+    transform: rotateZ(-90deg);
+}
+
+.nav-button-wrapper .menu-button.open .menu-icon-close {
+    opacity: 1;
+    transform: rotateZ(0deg);
+}
+
+.nav-button-wrapper .menu-button .menu-icon-open {
+    opacity: 1;
+    transform: rotateZ(0deg);
+}
+.nav-button-wrapper .menu-button.open .menu-icon-open {
+    opacity: 0;
+    transform: rotateZ(90deg);
+}
+
+@media (min-width: 850px) {
+    nav {
+        visibility: unset;
+        opacity: 1;
+        width: 200px;
+        left: 0;
+        border-right: 2px solid whitesmoke;
+    }
+
+    nav ul li {
+        cursor: pointer;
+        border-right: 2px solid whitesmoke;
+        font-size: unset;
+        width: 200px;
+        padding: unset;
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+
+    nav ul li:hover {
+        border-right: 2px solid #BCAAA4;
+    }
+
+    nav ul li.active:hover {
+        border-right: 2px solid whitesmoke;
+    }
+
+    .nav-button-wrapper {
+        visibility: hidden;
+    }
+}
